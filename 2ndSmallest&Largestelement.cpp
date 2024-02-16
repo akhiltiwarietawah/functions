@@ -1,35 +1,34 @@
-// In cpp 
-int 2ndLar(vector<int> &arr){
-    int largest = arr[0], 2ndlargest = INT_MIN, n = arr.size();
+int secondLar(vector<int> &a, int n){
+    int largest = a[0], secondlargest = -1;
 
     for(int i = 1; i<n; i++){
-        if(arr[i]>largest){
-            largest = arr[i];
-            2ndlargest = largest;
+        if(a[i]>largest){
+            secondlargest = largest;
+            largest = a[i];
+            
         }
 
-        else if (arr[i] != largest && arr[i] > 2ndlargest){
-            2ndlargest = arr[i];
+        else if (a[i] != largest && a[i] > secondlargest){
+            secondlargest = a[i];
         }
     }
-    return 2ndlargest;
+    return secondlargest;
 }
 
 
-int 2ndSmallest(vector<int> &arr){
-    int smallest = arr[0], 2ndsmallest = INT_MAX, n = arr.size();
+int secondSmallest(vector<int> &a, int n){
+    int smallest = a[0], secondsmallest = INT_MAX;
 
     for(int i = 1; i<n; i++){
-        if(arr[i]<smallest){
-            smallest = arr[i];
-            2ndsmallest = smallest;
+        if(a[i]<smallest){
+            secondsmallest = smallest;
+            smallest = a[i];
+            
         }
 
-        else if (arr[i] != smallest && arr[i] < 2ndsmallest){
-            2ndsmallest = arr[i];
+        else if (a[i] != smallest && a[i] < secondsmallest){
+            secondsmallest = a[i];
         }
     }
-    return 2ndsmallest;
+    return secondsmallest;
 }
-
-
